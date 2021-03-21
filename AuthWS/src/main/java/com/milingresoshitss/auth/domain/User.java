@@ -1,43 +1,51 @@
 package com.milingresoshitss.auth.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.io.Serializable;
+import javax.persistence.*;
 
+
+/**
+ * The persistent class for the USERS database table.
+ * 
+ */
 @Entity
-public class User {
+@Table(name="USERS")
+@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	private Long numIdUser;
-	
-	private String userFullName;
-	
-	private String UserPassword;
+	private int numiduser;
 
-	public Long getNumIdUser() {
-		return numIdUser;
-	}
+	private String userfullname;
 
-	public void setNumIdUser(Long numIdUser) {
-		this.numIdUser = numIdUser;
+	private String userpassword;
+
+	public User() {
 	}
 
-	public String getUserFullName() {
-		return userFullName;
+	public int getNumiduser() {
+		return this.numiduser;
 	}
 
-	public void setUserFullName(String userFullName) {
-		this.userFullName = userFullName;
+	public void setNumiduser(int numiduser) {
+		this.numiduser = numiduser;
 	}
 
-	public String getUserPassword() {
-		return UserPassword;
+	public String getUserfullname() {
+		return this.userfullname;
 	}
 
-	public void setUserPassword(String userPassword) {
-		UserPassword = userPassword;
+	public void setUserfullname(String userfullname) {
+		this.userfullname = userfullname;
 	}
-	
-	@Override
-	public String toString() {
-		return "User [numIdUser=" + numIdUser + ", name=" + userFullName + ", pwd=" + UserPassword + "]";
+
+	public String getUserpassword() {
+		return this.userpassword;
 	}
+
+	public void setUserpassword(String userpassword) {
+		this.userpassword = userpassword;
+	}
+
 }

@@ -47,7 +47,7 @@ public class NewUserRequest {
 
     @XmlElement(required = true)
     protected String userFullName;
-    protected long userNumId;
+    protected int userNumId;
     @XmlElement(required = true)
     protected String userPassword;
 
@@ -79,7 +79,7 @@ public class NewUserRequest {
      * Obtiene el valor de la propiedad userNumId.
      * 
      */
-    public long getUserNumId() {
+    public int getUserNumId() {
         return userNumId;
     }
 
@@ -87,7 +87,7 @@ public class NewUserRequest {
      * Define el valor de la propiedad userNumId.
      * 
      */
-    public void setUserNumId(long value) {
+    public void setUserNumId(int value) {
         this.userNumId = value;
     }
 
